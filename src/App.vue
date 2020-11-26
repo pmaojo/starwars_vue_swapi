@@ -1,32 +1,46 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <nav id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+      <router-link to="/pilots">Pilots</router-link> |
+      <router-link to="/starships">Starships</router-link>
+    </nav>
+    <main>
+      <router-view/>
+    </main>
+    <footer>Pelayo Maojo Star Wars Frontend Challenge © 2020</footer>
   </div>
 </template>
 
 <style>
+body {
+  background: #01070e;
+  padding: 16px;
+  font-size: 16px;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: white;
+  min-height: 100vh;
 }
 
 #nav {
-  padding: 30px;
+  padding: 32px;
 }
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: white;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #ffee00;
 }
+img{
+  max-width: 100%;
+}
+
 </style>
