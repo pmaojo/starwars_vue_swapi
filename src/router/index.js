@@ -13,12 +13,12 @@ const routes = [
   {
     path: '/pilots',
     name: 'Pilots',
-    component: Pilots
+    component: () => import(/* webpackChunkName: "pilots" */ '../views/Pilots.vue'),
   },
   {
     path: '/pilot/:id',
     name: 'Pilot',
-    component: Pilot,
+    component: () => import(/* webpackChunkName: "pilot" */ '../views/Pilot.vue'),
     props: {
       id: '',
     },
@@ -26,12 +26,12 @@ const routes = [
   {
     path: '/starships',
     name: 'Starships',
-    component: Starships,
+    component: () => import(/* webpackChunkName: "starships" */ '../views/Starships.vue'),
   },
   {
     path: '/starship/:id',
     name: 'Starship',
-    component: Starship,
+    component: () => import(/* webpackChunkName: "starship" */ '../views/Starship.vue'),
     props: {
       id: '',
     },
