@@ -11,12 +11,12 @@ const routes = [
     component: Home
   },
   {
-    path: '/pilots',
+    path: '/pilots/',
     name: 'Pilots',
     component: () => import(/* webpackChunkName: "pilots" */ '../views/Pilots.vue'),
   },
   {
-    path: '/pilot/:id',
+    path: '/pilots/:id',
     name: 'Pilot',
     component: () => import(/* webpackChunkName: "pilot" */ '../views/Pilot.vue'),
     props: {
@@ -29,7 +29,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "starships" */ '../views/Starships.vue'),
   },
   {
-    path: '/starship/:id',
+    path: '/starships/:id',
     name: 'Starship',
     component: () => import(/* webpackChunkName: "starship" */ '../views/Starship.vue'),
     props: {
