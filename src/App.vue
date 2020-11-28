@@ -3,8 +3,8 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <nav id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/pilots">Pilots</router-link> |
-      <router-link to="/starships">Starships</router-link>
+      <router-link :class="$route.params.id && $route.name === 'Pilot' ? 'router-link-exact-active' : ''" to="/pilots/">Pilots</router-link> |
+      <router-link :class="$route.params.id && $route.name === 'Starship' ? 'router-link-exact-active' : ''" to="/starships/">Starships</router-link>
     </nav>
     <main>
       <transition name="slide-fade">
@@ -47,17 +47,14 @@ a.router-link-exact-active {
 img{
   max-width: 100%;
 }
-/* Enter and leave animations can use different */
-/* durations and timing functions.              */
 .slide-fade-enter-active {
-  transition: all .1s ease;
+  transition: all 1s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 .slide-fade-leave-active {
   transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateY(120px);
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateY(-16px);
   opacity: 0;
 }
 .card {
@@ -71,4 +68,5 @@ img{
   margin:auto;
   margin-bottom:16px;
 }
+
 </style>
