@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <div>
-      <List :model="'people'" :title="'Pilots'" />
+      <List :model="'people'" :modelname="'pilots'" :title="'Pilots'" />
     </div>
   </div>
 </template>
@@ -10,17 +10,8 @@
 import List from '../components/List.vue'
 
 export default {
-    data: function () {
-      return {
-        items: [],
-        responseAvailable: false
-      }
-    },
     components: {
       List
-    },
-    methods: {
-       
     }
 }
 </script>

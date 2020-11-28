@@ -1,0 +1,12 @@
+App
+    Home
+    Pilotos
+    Piloto
+        Ficha piloto
+        Related _ Naves relacionadas
+        Related _ Peliculas relacionadas
+    Naves
+    Nave
+        Ficha Nave
+        Related _ Pilotos relacionados
+        Related _ Películas relacionadas

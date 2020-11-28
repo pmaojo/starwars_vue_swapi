@@ -1,5 +1,20 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="">
+    <h1>{{ name }}</h1>
   </div>
 </template>
+<script>
+import axios from 'axios';
+
+export default {
+  data () { return {
+    name: '',
+  }
+  },
+  beforeMount () {
+    axios
+      .get('https://swapi.dev/api/people/'+this.$route.params.id)
+      .then(response => (this.name = response.data.name))
+  }
+}
+</script>
