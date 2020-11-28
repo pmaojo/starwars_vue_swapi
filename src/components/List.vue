@@ -2,7 +2,7 @@
   <div>
     <h1>{{ title }}</h1>
     <div class="card" v-for="item in items" :key="item.url">
-        <router-link :to="'/' + model + '/' + item.url.slice(-2)">{{ item.name }}</router-link>
+        <router-link :to="'/' + modelname + '/' + item.url.split('/')[5]">{{ item.name }}</router-link>
     </div>
   </div>
 </template>
@@ -15,16 +15,31 @@ export default {
   data: function () { 
     return {
       items: [],
-      responseAvailable: false }
+      nextavailable: 2 
+      }
   },
-  beforeMount () {
+  mounted () {
     axios
-      .get('https://swapi.dev/api/'+this.model+'')
+      .get('https://swapi.dev/api/'+this.model+'/')
       .then(response => (this.items = response.data.results))
   },
-   props: {
+  updated () {
+    if (this.nextavailable) 
+      this.getAll()
+  },
+  props: {
     model: String,
+    modelname: String,
     title: String
+  },
+  methods: {
+    getAll(){
+        axios
+          .get('https://swapi.dev/api/'+this.model+'/?page='+this.nextavailable)
+          .then(response => (
+            this.items = response.data.next != null ? this.items.concat(response.data.results) : this.items,
+            this.nextavailable = response.data.next != null ? this.nextavailable + 1 : false))
+      }
+    }
   }
-}
 </script>
