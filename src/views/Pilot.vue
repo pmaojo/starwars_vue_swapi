@@ -1,20 +1,27 @@
 <template>
-  <div class="">
-    <h1>{{ name }}</h1>
+  <div class="text-left">
+    <h1>{{ pilot.name }}</h1>
+    <div v-for="(value, propertyName,index) in pilot" :key="value">
+      <div v-if="index > 1 && index <= 7"> 
+        <h4>{{ propertyName }}</h4> 
+        <p>{{ value }}</p>
+      </div>
+    </div>
   </div>
 </template>
 <script>
-import axios from 'axios';
+import SwApi from '@/services/api/SwApi.js'
+const SwApiService = new SwApi();
 
 export default {
   data () { return {
     name: '',
+    id: '',
+    pilot: []
   }
   },
-  beforeMount () {
-    axios
-      .get('https://swapi.dev/api/people/'+this.$route.params.id)
-      .then(response => (this.name = response.data.name))
+  async mounted () {
+    this.pilot = await SwApiService.getDetails('people',this.$route.params.id)
   }
 }
 </script>
