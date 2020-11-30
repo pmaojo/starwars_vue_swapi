@@ -1,8 +1,17 @@
 <template>
   <div>
     <h1>{{ title }}</h1>
-    <div class="card" v-for="item in items" :key="item.url">
-      <router-link :to="'/' + modelname + '/' + item.url.split('/')[5]">{{ item.name }}</router-link>
+    <div class="row">
+      <div class="col-md-4 col-lg-3" v-for="item in items" :key="item.url">
+        <div class="card bg-dark mb-5">
+          <router-link :to="'/' + modelname + '/' + item.url.split('/')[5]">
+            <h3>{{ item.name }}</h3>
+            <div class="card-image" v-if="model === 'people'">
+              <div class="image"><img :src="'./characters/'+item.url.split('/')[5]+'.jpg'" /></div>
+            </div>
+          </router-link>
+        </div>
+      </div>
     </div>
   </div>
 </template>

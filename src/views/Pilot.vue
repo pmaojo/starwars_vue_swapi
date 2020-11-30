@@ -1,27 +1,19 @@
 <template>
-  <div class="text-left">
-    <h1>{{ pilot.name }}</h1>
-    <div v-for="(value, propertyName,index) in pilot" :key="value">
-      <div v-if="index > 1 && index <= 7"> 
-        <h4>{{ propertyName }}</h4> 
-        <p>{{ value }}</p>
-      </div>
-    </div>
+  <div>
+    <Details 
+      :model="'people'" 
+      :relatedtitle="'Starships'"
+      :relatedmodel="'starships'" 
+    />
   </div>
 </template>
 <script>
-import SwApi from '@/services/api/SwApi.js'
-const SwApiService = new SwApi();
+  import Details from '../components/Details'
 
-export default {
-  data () { return {
-    name: '',
-    id: '',
-    pilot: []
+  export default {
+    components: {
+      Details
+    }
   }
-  },
-  async mounted () {
-    this.pilot = await SwApiService.getDetails('people',this.$route.params.id)
-  }
-}
+
 </script>

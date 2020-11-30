@@ -11,11 +11,12 @@ export default class SwApi {
       .catch(e => (alert('Api error! - Hola Api. Hola, Blas. 👉🏻 ' + e)))
   }
 
-  getNextPage(model, nextavailable) {
+  getNextPage(model, nextIDavailable) {
     return axios
-      .get('https://swapi.dev/api/' + model + '/?page=' + nextavailable)
+      .get('https://swapi.dev/api/' + model + '/?page=' + nextIDavailable)
       .then(response => {return response.data})
   }
+
   getTotal(model) {
     return axios
       .get('https://swapi.dev/api/' + model)
@@ -25,9 +26,25 @@ export default class SwApi {
   getDetails(model, ident) {
     return axios
       .get('https://swapi.dev/api/'+model+'/'+ident)
+      .then(window.scrollTo(0, 0))
       .then( response => {return response.data})
       .finally(
-      window.scrollTo(0, 0)
     )
   }
+  getRelated(model, parent, ident) {
+    return axios
+      .get('https://swapi.dev/api/'+parent+'/'+ident)
+      .then( response => {return (model === 'starships') ? response.data.spaceships : response.data.films})
+      .finally(
+    )
+  }
+  async getNames(urls) {
+    let names = []
+    for(let i = 0; i < urls.length; i++){ 
+      axios
+        .get(urls[i])
+        .then( response => {names.push(response.data['title'] || response.data['name'])})
+        .then( console.log(names))
+    }
+    return (names)}
 }
