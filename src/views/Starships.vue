@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="">
     <div>
       <List :model="'starships'" :modelname="'starships'" :title="'Starships'" />
     </div>

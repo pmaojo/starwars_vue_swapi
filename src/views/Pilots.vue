@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <div class="container">
+    <div>
       <List :model="'people'" :modelname="'pilots'" :title="'Pilots'" />
     </div>
   </div>
