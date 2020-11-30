@@ -1,10 +1,10 @@
 <template>
   <div class="home container mt-5">
     <div class="row">
-      <div class="col-5 offset-1">
+      <div class="col-5 offset-0 offset-md-1">
         <h1>A list of all the starships and pilots featured on Star Wars films.</h1>
       </div>
-      <div v-if="starshipscount>0" class="offset-2 col-4">
+      <div v-if="starshipscount>0" class="offset-0 col-12 offset-md-1 col-md-4">
         <h2>{{ starshipscount }} starships</h2>
         <router-link class="btn btn-primary btn-lg btn-success" to="/starships"> See all starships</router-link>
       <div v-if="pilotscount>0" class="mt-4">
