@@ -1,23 +1,25 @@
 <template>
   <div>
     <div class="card container bg-dark mt-4">
-      <div>
-        <h1>{{ item.name }}</h1>
-      </div>
+   
 
       <div class="row">
         <div class="col-md-4" v-if="this.model == 'people'">
           <img :src="'./characters/'+$route.params.id+'.jpg'" />
         </div>
-        <div class="col-md-4">
+        <div class="col-12 col-md-4">
+             <div>
+        <h1>{{ item.name }}</h1>
+      </div>
           <div class="text-left" v-for="(value, propertyName,index) in item" :key="index">
             <div v-if="index > 1 && index <= 7">
-              <h4>{{ propertyName | snakeToTitleCase }}</h4>
-              <p>{{ value }}</p>
+              <h6>{{ propertyName | snakeToTitleCase }}</h6>
+              <h4>{{ value }}</h4>
+              <hr>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-12 col-xs-12 col-md-4">
           <div v-if="item.starships != ''" class="card bg-dark mb-5">
             <div class="title">
               <h4>{{ relatedtitle }}</h4>
