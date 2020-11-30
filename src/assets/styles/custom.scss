@@ -1,6 +1,5 @@
 body {
   height: 100%;
-  padding-top: 14vh;
 }
 
 #main {
@@ -29,7 +28,7 @@ h3 {
   min-height: 40px;
   text-align:center;
 }
-h4 {
+h4,h1 {
     color: #ffe81f;
 }
 
@@ -48,3 +47,25 @@ img {
     background-color: indianred;
     cursor: pointer;
   }
+.btn {
+    width: 100%;
+}
+  @media screen and (max-width: 768px) {
+  
+    
+  }
+
+  .home.router-link-active > a {
+      color:white;
+      text-decoration: none;
+  }
+  .home > a.router-link-active.router-link-exact-active > a {
+    color:white;
+    text-decoration: underline!important;
+}
+.router-link-active {
+    text-decoration: underline;
+}
+  .home > a {
+      text-decoration: none;
+    }
