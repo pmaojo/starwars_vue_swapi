@@ -1,0 +1,50 @@
+body {
+  height: 100%;
+  padding-top: 14vh;
+}
+
+#main {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+h3 {
+    font-size: 16px;
+    background: #ffe52d;
+    padding: 10px;
+    margin: 0px;
+    color: black;
+      display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items:center;
+  min-height: 40px;
+  text-align:center;
+}
+h4 {
+    color: #ffe81f;
+}
+
+#app {
+  font-family: 'Michroma', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: rgb(201, 201, 201);
+}
+
+img {
+    max-width: 100%;
+}
+
+ .router-link-exact-active .router-link-active {
+    background-color: indianred;
+    cursor: pointer;
+  }
