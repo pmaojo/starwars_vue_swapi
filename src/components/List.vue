@@ -2,7 +2,7 @@
   <div>
     <h1>{{ title }}</h1>
     <div class="row">
-      <div class="col-md-4 col-lg-3" v-for="item in items" :key="item.url">
+      <div class="col-6 col-md-4 col-lg-3" v-for="item in items" :key="item.url">
         <div class="card bg-dark mb-5">
           <router-link :to="'/' + modelname + '/' + item.url.split('/')[5]">
             <h3>{{ item.name }}</h3>
