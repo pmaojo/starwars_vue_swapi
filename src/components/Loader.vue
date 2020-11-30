@@ -13,7 +13,7 @@ export default {
   }
 </script>
 
-<style>
+<style scoped>
   svg {
     animation: 2s linear infinite svg-animation;
     max-width: 100px;
