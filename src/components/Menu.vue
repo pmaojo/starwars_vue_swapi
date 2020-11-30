@@ -1,7 +1,9 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="dark">
-      <b-navbar-brand to="/"><img alt="Vue logo" src="@/assets/img/logo.png"></b-navbar-brand>
+    <b-navbar toggleable="lg" type="dark" variant="dark" class="text-right">
+      <b-navbar-brand to="/">
+        <img alt="Vue logo" src="@/assets/img/logo.png">
+      </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">

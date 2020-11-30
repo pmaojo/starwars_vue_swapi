@@ -20,7 +20,7 @@
           </div>
         </div>
         <div class="col-12 col-xs-12 col-md-4">
-          <div v-if="item.starships != ''" class="card bg-dark mb-2 mt-3">
+          <div v-if="this.starshipnames != ''" class="card bg-dark mb-2 mt-3">
             <div class="text-success">
               <h4>{{ relatedtitle }}</h4>
             </div>
@@ -34,7 +34,6 @@
             <div class="title mb-3 text-success">
               <h4>Featured in this films</h4>
             </div>
-
             <div v-for="(film) in this.filmnames" :key="film">
               <p>{{ film }}</p>
             </div>
