@@ -3,8 +3,8 @@
     <h1 class="mb-4 mt-4">{{ title }}</h1>
     <div class="row">
       <div class="col-12 col-md-3 col-lg-3 pb-4" v-for="item in items" :key="item.url">
-          <router-link class="card h-100 bg-primary mb-3" :to="'/' + modelname + '/' + item.url.split('/')[5]">
-              <div class="card-title p-3 mb-0 align-middle h-100 "><h4>{{ item.name }}</h4></div>
+          <router-link class="card h-100 bg-primary mb-2" :to="'/' + modelname + '/' + item.url.split('/')[5]">
+              <div class="card-title p-3 mb-0 align-middle h-100 text-success"><h4>{{ item.name }}</h4></div>
               <div class="card-image mt-auto" v-if="model === 'people'">
                  <img :src="'./characters/'+item.url.split('/')[5]+'.jpg'" />
             </div>
