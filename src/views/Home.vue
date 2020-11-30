@@ -1,8 +1,8 @@
 <template>
-  <div class="home container mt-5">
+  <div class="home container mt-3">
     <div class="row">
-      <div class="col-12 col-md-9 offset-0 mb-5 text-success">
-        <h1>A list of all the starships and pilots featured on Star Wars films.</h1>
+      <div class="col-12 col-md-9 offset-0 mb-3 text-success">
+        <h1>All the starships and pilots featured on Star Wars.</h1>
       </div>
       <div v-if="starshipscount>0" class="offset-0 col-12 col-md-6 col-lg-6 mb-3">
         <h2>{{ starshipscount }} starships</h2>
