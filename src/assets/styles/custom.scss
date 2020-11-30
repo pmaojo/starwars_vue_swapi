@@ -1,71 +1,90 @@
 body {
-  height: 100%;
+	height: 100%;
 }
-
+.card {
+	height: 100%;
+	overflow: hidden;
+}
 #main {
-  flex: 1 0 auto;
+	flex: 1 0 auto;
 }
-
 #sticky-footer {
-  flex-shrink: none;
+	flex-shrink: none;
 }
-
 a {
-  text-decoration: none;
-  font-weight: bold;
-  color: white;
-}
-h3 {
-    font-size: 16px;
-    background: #ffe52d;
-    padding: 10px;
-    margin: 0px;
-    color: black;
-      display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items:center;
-  min-height: 40px;
-  text-align:center;
-}
-h4,h1 {
-    color: #ffe81f;
+	text-decoration: none;
+	font-weight: bold;
+	color: white;
+	transition: .3s all;
+	
+	&:hover {
+		color:$yellow;
+		text-decoration: underline;
+	}
 }
 
 #app {
-  font-family: 'Michroma', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: rgb(201, 201, 201);
+	font-family: 'Michroma', Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: rgb(201, 201, 201);
 }
-
 img {
-    max-width: 100%;
+	max-width: 100%;
+	border-radius:10px;
 }
-
- .router-link-exact-active .router-link-active {
-    background-color: indianred;
-    cursor: pointer;
-  }
+.router-link-exact-active {
+	.router-link-active {
+		background-color: indianred;
+		cursor: pointer;
+	}
+}
 .btn {
-    width: 100%;
+	width: 100%;
 }
-  @media screen and (max-width: 768px) {
-  
-    
-  }
-
-  .home.router-link-active > a {
-      color:white;
-      text-decoration: none;
-  }
-  .home > a.router-link-active.router-link-exact-active > a {
-    color:white;
-    text-decoration: underline!important;
+.home.router-link-active {
+	>a {
+		color: white;
+		text-decoration: none;
+	}
+}
+.home {
+	>a.router-link-active.router-link-exact-active {
+		>a {
+			color: white;
+			text-decoration: underline !important;
+		}
+	}
+	>a {
+		text-decoration: none;
+	}
 }
 .router-link-active {
-    text-decoration: underline;
+	text-decoration: underline;
 }
-  .home > a {
-      text-decoration: none;
-    }
+.row {
+	>[class*='col-'] {
+		display: flex;
+		flex-direction: column;
+	}
+}
+a.bg-primary {
+	&:hover {
+		background-color: #160841 !important;
+		color: #ffe81f;
+	}
+	&:focus {
+		background-color: #160841 !important;
+		color: #ffe81f;
+	}
+}
+button.bg-primary {
+	&:hover {
+		background-color: #160841 !important;
+		color: #ffe81f;
+	}
+	&:focus {
+		background-color: #160841 !important;
+		color: #ffe81f;
+	}
+}

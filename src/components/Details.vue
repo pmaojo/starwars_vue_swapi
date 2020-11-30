@@ -1,27 +1,27 @@
 <template>
   <div>
     <div class="card container bg-dark mt-4">
-   
-
+      <router-link class="right-float" :to="'/'+modelname+''">❮ {{ modelname }}</router-link>
       <div class="row">
-        <div class="col-md-4" v-if="this.model == 'people'">
+        <div class="pl-3 col-12 text-success">
+          <h1>{{ item.name }}</h1>
+        </div>
+        <div class="col-md-5 coffset-1" v-if="this.model == 'people'">
           <img :src="'./characters/'+$route.params.id+'.jpg'" />
         </div>
-        <div class="col-12 col-md-4">
-             <div>
-        <h1>{{ item.name }}</h1>
-      </div>
+        <div class="col-12 col-md-3 mb-3">
+
           <div class="text-left" v-for="(value, propertyName,index) in item" :key="index">
             <div v-if="index > 1 && index <= 7">
-              <h6>{{ propertyName | snakeToTitleCase }}</h6>
-              <h4>{{ value }}</h4>
+              <h6 class="text-secondary">{{ propertyName | snakeToTitleCase }}</h6>
+              <h4>{{ value | snakeToTitleCase }}</h4>
               <hr>
             </div>
           </div>
         </div>
         <div class="col-12 col-xs-12 col-md-4">
-          <div v-if="item.starships != ''" class="card bg-dark mb-5">
-            <div class="title">
+          <div v-if="item.starships != ''" class="card bg-dark mb-2 mt-3">
+            <div class="text-success">
               <h4>{{ relatedtitle }}</h4>
             </div>
             <div v-for="(relateditem, i) in this.starshipnames" :key="i">
@@ -30,9 +30,9 @@
               </p>
             </div>
           </div>
-          <div v-if="item.films" class="card bg-dark">
-            <div class="title mb-3">
-              <h4>Appears in this films</h4>
+          <div v-if="item.films" class="card bg-dark mb-5">
+            <div class="title mb-3 text-success">
+              <h4>Featured in this films</h4>
             </div>
 
             <div v-for="(film) in this.filmnames" :key="film">
@@ -54,7 +54,8 @@
     props: {
       model: String,
       relatedtitle: String,
-      relatedmodel: String
+      relatedmodel: String,
+      modelname: String,
     },
     data() {
       return {

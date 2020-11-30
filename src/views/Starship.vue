@@ -4,6 +4,7 @@
       :model="'starships'"
       :relatedtitle="'Pilots'"
       :relatedmodel="'pilots'" 
+      :modelname="'Starships'"
        />
   </div>
 </template>

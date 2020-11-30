@@ -1,16 +1,14 @@
 <template>
   <div>
-    <h1>{{ title }}</h1>
+    <h1 class="mb-4 mt-4">{{ title }}</h1>
     <div class="row">
-      <div class="col-6 col-md-4 col-lg-3" v-for="item in items" :key="item.url">
-        <div class="card bg-dark mb-5">
-          <router-link :to="'/' + modelname + '/' + item.url.split('/')[5]">
-            <h3>{{ item.name }}</h3>
-            <div class="card-image" v-if="model === 'people'">
-              <div class="image"><img :src="'./characters/'+item.url.split('/')[5]+'.jpg'" /></div>
+      <div class="col-12 col-md-3 col-lg-3 pb-4" v-for="item in items" :key="item.url">
+          <router-link class="card h-100 bg-primary mb-3" :to="'/' + modelname + '/' + item.url.split('/')[5]">
+              <div class="card-title p-3 mb-0 align-middle h-100 "><h4>{{ item.name }}</h4></div>
+              <div class="card-image mt-auto" v-if="model === 'people'">
+                 <img :src="'./characters/'+item.url.split('/')[5]+'.jpg'" />
             </div>
           </router-link>
-        </div>
       </div>
     </div>
   </div>
