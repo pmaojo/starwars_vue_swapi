@@ -26,7 +26,7 @@
             </div>
             <div v-for="(relateditem, i) in this.starshipnames" :key="i">
               <p>
-                <router-link :to="'/'+relatedmodel+'/'+getID(i)">{{ relateditem }}</router-link>
+                <router-link :to="'/'+relatedmodel+'/'+relateditem.split('=')[0].split('/')[5]">{{ relateditem.split('=')[1] }}</router-link>
               </p>
             </div>
           </div>

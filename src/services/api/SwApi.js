@@ -39,11 +39,11 @@ export default class SwApi {
     )
   }
   async getNames(urls) {
-    let names = []
+    const names = []
     for(let i = 0; i < urls.length; i++){ 
       axios
         .get(urls[i])
-        .then( response => {names.push(response.data['title'] || response.data['name'])})
+        .then( response => {names.push(urls[i]+'='+(response.data['title'] || response.data['name']))})
     }
     return (names)}
 }
