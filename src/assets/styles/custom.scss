@@ -7,9 +7,6 @@ body {
 #main {
 	flex: 1 0 auto;
 }
-#sticky-footer {
-	flex-shrink: none;
-}
 a {
 	text-decoration: none;
 	font-weight: bold;
@@ -28,16 +25,16 @@ a {
 	-moz-osx-font-smoothing: grayscale;
 	color: rgb(201, 201, 201);
 }
-img {
+.card img {
 	max-width: 100%;
-	border-radius:10px;
+	border-radius:8px;
 }
-.router-link-exact-active {
-	.router-link-active {
-		background-color: indianred;
+  a.router-link-exact-active {
 		cursor: pointer;
+		color:$yellow!important;
+		
 	}
-}
+
 .btn {
 	width: 100%;
 }
@@ -86,4 +83,10 @@ button.bg-primary {
 		background-color: #160841 !important;
 		color: #ffe81f;
 	}
+}
+@media (min-width: 768px) {
+.starships.col-md-3 {
+    flex: 10 0 95%;
+    max-width: 55%;
+}
 }

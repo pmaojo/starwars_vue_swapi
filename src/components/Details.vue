@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card container bg-dark mt-4">
-      <router-link class="right-float" :to="'/'+modelname+''">❮ {{ modelname }}</router-link>
+      <router-link class="right-float" :to="'/'+modelname.toLowerCase()+''">❮ {{ modelname }}</router-link>
       <div class="row">
         <div class="pl-3 col-12 text-success">
           <h1>{{ item.name }}</h1>
@@ -9,7 +9,7 @@
         <div class="col-md-5 coffset-1" v-if="this.model == 'people'">
           <img :src="'./characters/'+$route.params.id+'.jpg'" />
         </div>
-        <div class="col-12 col-md-3 mb-3">
+        <div :class="'col-12 col-md-3 mb-3 ' + model ">
 
           <div class="text-left" v-for="(value, propertyName,index) in item" :key="index">
             <div v-if="index > 1 && index <= 7">
@@ -20,13 +20,14 @@
           </div>
         </div>
         <div class="col-12 col-xs-12 col-md-4">
-          <div v-if="this.starshipnames != ''" class="card bg-dark mb-2 mt-3">
+          <div v-if="this.relatednames != ''" class="card bg-dark mb-2 mt-3">
             <div class="text-success">
               <h4>{{ relatedtitle }}</h4>
             </div>
-            <div v-for="(relateditem, i) in this.starshipnames" :key="i">
+            <div v-for="(relateditem, i) in this.relatednames" :key="i">
               <p>
-                <router-link :to="'/'+relatedmodel+'/'+relateditem.split('=')[0].split('/')[5]">{{ relateditem.split('=')[1] }}</router-link>
+                <router-link :to="'/'+relatedmodel+'/'+relateditem.split('=')[0].split('/')[5]">
+                  {{ relateditem.split('=')[1] }}</router-link>
               </p>
             </div>
           </div>
@@ -35,7 +36,7 @@
               <h4>Featured in this films</h4>
             </div>
             <div v-for="(film) in this.filmnames" :key="film">
-              <p>{{ film }}</p>
+              <p>{{ film.split('=')[1] }}</p>
             </div>
           </div>
         </div>
@@ -59,7 +60,7 @@
     data() {
       return {
         item: [],
-        starshipnames: {},
+        relatednames: {},
         filmnames: {},
       }
     },
@@ -83,9 +84,9 @@
       this.item = await SwApiService.getDetails(this.model, this.$route.params.id)
       this.starships = this.item.starships || this.item.pilots
       let films = this.item.films
-      this.starshipnames = await SwApiService.getNames(this.starships);
+      this.relatednames = await SwApiService.getNames(this.starships);
       this.filmnames = await SwApiService.getNames(films);
-      console.log(this.starshipnames);
+      console.log(this.relatednames);
     }
   }
 
