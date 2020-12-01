@@ -33,7 +33,7 @@
           </div>
           <div v-if="item.films" class="card bg-dark mb-5">
             <div class="title mb-3 text-success">
-              <h4>Featured in this films</h4>
+              <h4>Featured in</h4>
             </div>
             <div v-for="(film) in this.filmnames" :key="film">
               <p>{{ film.split('=')[1] }}</p>
