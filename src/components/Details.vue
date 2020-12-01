@@ -6,7 +6,7 @@
         <div class="pl-3 col-12 text-success">
           <h1>{{ item.name }}</h1>
         </div>
-        <div class="col-md-5 coffset-1" v-if="this.model == 'people'">
+        <div class="col-md-4 coffset-1" v-if="this.model == 'people'">
           <img :src="'./characters/'+$route.params.id+'.jpg'" />
         </div>
         <div :class="'col-12 col-md-3 mb-3 ' + model ">
