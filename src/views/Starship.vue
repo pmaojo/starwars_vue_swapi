@@ -5,6 +5,7 @@
       :relatedtitle="'Pilots'"
       :relatedmodel="'pilots'" 
       :modelname="'Starships'"
+      :limitproperties="13"
        />
   </div>
 </template>
