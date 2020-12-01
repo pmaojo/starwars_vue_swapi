@@ -84,6 +84,8 @@ Bajo el consumo de la api: https://swapi.dev , tener una aplicación SPA donde s
 Se valorará activamente performance, uso y práctica de clean code, UX/UI. 
 
 # Propuesta: 
+Instalar
+```yarn```
 
 🚀  Lanzar en local:
 
