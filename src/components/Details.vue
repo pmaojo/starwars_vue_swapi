@@ -12,7 +12,7 @@
         <div :class="'col-12 col-md-3 mb-3 ' + model ">
 
           <div class="text-left" v-for="(value, propertyName,index) in item" :key="index">
-            <div v-if="index > 1 && index <= 7">
+            <div v-if="index > 1 && index <= (model == 'starships' ? 12 : 7)">
               <h6 class="text-secondary">{{ propertyName | snakeToTitleCase }}</h6>
               <h4>{{ value | snakeToTitleCase }}</h4>
               <hr>
@@ -56,6 +56,7 @@
       relatedtitle: String,
       relatedmodel: String,
       modelname: String,
+      limitproperties: Number 
     },
     data() {
       return {
@@ -86,7 +87,6 @@
       let films = this.item.films
       this.relatednames = await SwApiService.getNames(this.starships);
       this.filmnames = await SwApiService.getNames(films);
-      console.log(this.relatednames);
     }
   }
 
