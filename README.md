@@ -1,20 +1,20 @@
-* Listado de naves.
-* Listado de pilotos.
-* Bío de la nave
-* Bío del piloto
-* Relación de Pilotos / Nave
-* Relación de Nave / Piloto
-* Recomendación de películas por aparición del piloto en ella
-* Recomendación de películas por aparición de la nave en ella
+* Ships list.
+* Pilots list.
+* Spaceship Details
+* Pilot details
+* Pilots / Starcrafts relation
+* Stacrafts / Pilots relation
+* Film recomendations by pilot
+* Film recomendations by spaceship
 
-Mira el video: 
+Look this video: 
 https://drive.google.com/file/d/1Qx24MXH74fbqG0u9TwdGypN1FpyTTLMW/view?usp=sharing
 
-Instalar
+Install
 ```yarn```
 
-🚀  Lanzar en local:
+🚀  Launch:
 
 ```yarn serve```
 
-Abrir http://localhost:8080/ en navegador.
+Open http://localhost:8080/ .
